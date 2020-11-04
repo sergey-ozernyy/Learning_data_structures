@@ -269,14 +269,15 @@ public class NodeTests {
         var root = new Node(3);
         Node.addAlt(root, 2);
         Node.addAlt(root, 4);
-        var targetValue = 4;
+        Node.addAlt(root, 5);
+        var targetValue = 5;
 
         // Act
 
-        Node.find(root, targetValue);
+        var result = Node.find(root, targetValue);
 
         //Assert
-        assertEquals(targetValue, root.right.value);
+        assertEquals(targetValue, result.value);
     }
 
     @Test
@@ -289,10 +290,10 @@ public class NodeTests {
 
         // Act
 
-        Node.find(root, targetValue);
+        var result = Node.find(root, targetValue);
 
         //Assert
-        assertNull(root.right.right);
+        assertNull(result);
     }
 
     @Test
@@ -305,10 +306,10 @@ public class NodeTests {
 
         // Act
 
-        Node.findWithOutRec(root, targetValue);
+        var result = Node.findWithOutRec(root, targetValue);
 
         //Assert
-        assertEquals(targetValue, root.right.value);
+        assertEquals(targetValue, result.value);
     }
 
     @Test
@@ -321,10 +322,10 @@ public class NodeTests {
 
         // Act
 
-        Node.findWithOutRec(root, targetValue);
+        var result = Node.findWithOutRec(root, targetValue);
 
         //Assert
-        assertNull(root.right.right);
+        assertNull(result);
     }
 
 

@@ -73,11 +73,11 @@ class Node {
     public static Node find(Node root, int targetValue) {
         if (targetValue < root.value) {
             if (root.left == null) return null;
-            find(root.left, targetValue);
+            return find(root.left, targetValue);
         }
         if (targetValue > root.value){
             if (root.right == null) return null;
-            find(root.right, targetValue);
+            return find(root.right, targetValue);
         }
         return root;
     }
@@ -121,6 +121,7 @@ public class Main {
         Node.add(root2, 5);
         Node.add(root2, 4);
         Node.printSorted(root);
+        Node.find(root, 4);
 
 
     }
