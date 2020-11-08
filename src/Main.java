@@ -1,4 +1,7 @@
+
 import trees.Node;
+import trees.RecursiveTree;
+import trees.Tree;
 
 public class Main {
 
@@ -19,8 +22,20 @@ public class Main {
         Node.add(root2, 2);
         Node.add(root2, 5);
         Node.add(root2, 4);
-        Node.printSorted(root);
-        Node.find(root, 4);
+
+        Tree tree1 = new RecursiveTree();
+        tree1.add(3);
+        tree1.add(1);
+        tree1.add(0);
+        tree1.add(2);
+        tree1.add(5);
+        tree1.add(4);
+        System.out.println("Tree1:");
+        Node.printSorted(tree1.getRoot());
+        var tree2 = tree1.copyDeep();
+        System.out.println("Tree2:");
+        Node.printSorted(tree2.getRoot());
+
 
 
     }

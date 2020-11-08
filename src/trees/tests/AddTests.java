@@ -1,6 +1,5 @@
 package trees.tests;
 
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -23,6 +22,38 @@ public abstract class AddTests{
         // Assert.
         assertEquals(0, tree.getRoot().getValue());
     }
+
+    @Test
+    void copyDeepRoot(){
+        //Arrange
+        Tree tree1 = createTree();
+        tree1.add(3);
+
+        
+        //Act
+        var tree2 = tree1.copyDeep();
+        
+        //Assert
+        assertNotNull(tree1.copyDeep());
+        assertEquals(tree1.getRoot().getValue(), tree2.getRoot().getValue());
+    }
+
+    @Test
+    void copyDeepRootAndLeftRight(){
+        //Arrange
+        Tree tree1 = createTree();
+        tree1.add(3);
+        tree1.add(1);
+        tree1.add(2);
+
+        //Act
+        var tree2 = tree1.copyDeep();
+
+        //Assert
+        assertEquals(tree1.getRoot().getLeft().getRight().getValue(), tree2.getRoot().getLeft().getRight().getValue());
+    }
+
+
 
     protected abstract Tree createTree();
 
@@ -120,6 +151,7 @@ class AddRecursiveTests extends AddTests{
         return new RecursiveTree();
     }
 }
+
 
 @DisplayName("Нерекурсивное добавление элемента")
 class AddNotRecursiveTests extends AddTests{

@@ -18,6 +18,8 @@ public abstract class Tree {
     protected void setRoot(Node root){
         this.root = root;
     }
+
+    public abstract Tree copyDeep();
 }
 
 

@@ -11,6 +11,15 @@ public class NotRecursiveTree extends Tree {
 
     }
 
+    @Override
+    public Tree copyDeep() {
+        Tree tree2 = new RecursiveTree();
+        if (getRoot() != null){
+            tree2.setRoot(getRoot());
+        }
+        return tree2;
+    }
+
     void addInternal(Node root, int value) {
         while (true) {
             if (value < root.getValue()) {

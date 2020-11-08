@@ -19,4 +19,25 @@ public class RecursiveTree extends Tree{
         }
         return root;
     }
+
+    @Override
+    public Tree copyDeep(){
+        Tree tree2 = new RecursiveTree();
+        if(getRoot() != null){
+            tree2.setRoot(copyDeepNode(getRoot()));
+        }
+
+        return tree2;
+    }
+
+    protected Node copyDeepNode(Node root){
+        var root2 = new Node(root.getValue());
+        if(root.getLeft() != null){
+            root2.setLeft(copyDeepNode(root.getLeft()));
+        }
+        if(root.getRight() != null){
+            root2.setRight(copyDeepNode(root.getRight()));
+        }
+        return root2;
+    }
 }
