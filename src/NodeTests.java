@@ -1,10 +1,13 @@
 import org.junit.jupiter.api.Test;
+import trees.Node;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class NodeTests {
+
+class NodeTests {
+
     @Test
-    void addOneLeftAtRoot(){
+    void addOneLeftAtRoot() {
         // Arrange.
         var root = new Node(3);
 
@@ -21,7 +24,7 @@ public class NodeTests {
     }
 
     @Test
-    void addOneRightAtRoot(){
+    void addOneRightAtRoot() {
         // Arrange.
         var root = new Node(3);
 
@@ -38,7 +41,7 @@ public class NodeTests {
     }
 
     @Test
-    void addOneLeftAtLeft(){
+    void addOneLeftAtLeft() {
         // Arrange.
         var root = new Node(3);
         Node.add(root, 1);
@@ -52,7 +55,7 @@ public class NodeTests {
     }
 
     @Test
-    void addOneRightAtLeftLeft(){
+    void addOneRightAtLeftLeft() {
         // Arrange.
         var root = new Node(4);
         Node.add(root, 2);
@@ -67,7 +70,7 @@ public class NodeTests {
     }
 
     @Test
-    void addDuplicate(){
+    void addDuplicate() {
         // Arrange
         var root = new Node(3);
         Node.add(root, 2);
@@ -82,7 +85,7 @@ public class NodeTests {
 
     //AddALT
     @Test
-    void addAltOneLeftAtRoot(){
+    void addAltOneLeftAtRoot() {
         // Arrange.
         var root = new Node(3);
 
@@ -99,7 +102,7 @@ public class NodeTests {
     }
 
     @Test
-    void addAltOneRightAtRoot(){
+    void addAltOneRightAtRoot() {
         // Arrange.
         var root = new Node(3);
 
@@ -116,7 +119,7 @@ public class NodeTests {
     }
 
     @Test
-    void addAltOneLeftAtLeft(){
+    void addAltOneLeftAtLeft() {
         // Arrange.
         var root = new Node(3);
         Node.addAlt(root, 1);
@@ -130,7 +133,7 @@ public class NodeTests {
     }
 
     @Test
-    void addAltOneRightAtLeftLeft(){
+    void addAltOneRightAtLeftLeft() {
         // Arrange.
         var root = new Node(4);
         Node.addAlt(root, 2);
@@ -145,7 +148,7 @@ public class NodeTests {
     }
 
     @Test
-    void addAltDuplicate(){
+    void addAltDuplicate() {
         // Arrange
         var root = new Node(3);
         Node.addAlt(root, 2);
@@ -157,8 +160,9 @@ public class NodeTests {
         // Assert
         assertNull(root.right.left);
     }
+
     @Test
-    void addAltUnic(){
+    void addAltUnic() {
         // Arrange
         var root = new Node(3);
         Node.addAlt(root, 2);
@@ -174,7 +178,7 @@ public class NodeTests {
 
     //Add without recursion
     @Test
-    void addWithoutRecOneLeftAtRoot(){
+    void addWithoutRecOneLeftAtRoot() {
         // Arrange.
         var root = new Node(3);
 
@@ -191,7 +195,7 @@ public class NodeTests {
     }
 
     @Test
-    void addWithoutRecOneRightAtRoot(){
+    void addWithoutRecOneRightAtRoot() {
         // Arrange.
         var root = new Node(3);
 
@@ -208,7 +212,7 @@ public class NodeTests {
     }
 
     @Test
-    void addWithoutRecOneLeftAtLeft(){
+    void addWithoutRecOneLeftAtLeft() {
         // Arrange.
         var root = new Node(3);
         Node.addAlt(root, 1);
@@ -222,7 +226,7 @@ public class NodeTests {
     }
 
     @Test
-    void addWithoutRecOneRightAtLeftLeft(){
+    void addWithoutRecOneRightAtLeftLeft() {
         // Arrange.
         var root = new Node(4);
         Node.addAlt(root, 2);
@@ -237,7 +241,7 @@ public class NodeTests {
     }
 
     @Test
-    void addWithoutRecDuplicate(){
+    void addWithoutRecDuplicate() {
         // Arrange
         var root = new Node(3);
         Node.addAlt(root, 2);
@@ -249,8 +253,9 @@ public class NodeTests {
         // Assert
         assertNull(root.right.left);
     }
+
     @Test
-    void addWithoutRecUnique(){
+    void addWithoutRecUnique() {
         // Arrange
         var root = new Node(3);
         Node.addAlt(root, 2);
@@ -264,7 +269,7 @@ public class NodeTests {
     }
 
     @Test
-    void findElement(){
+    void findElement() {
         // Arrange
         var root = new Node(3);
         Node.addAlt(root, 2);
@@ -281,7 +286,7 @@ public class NodeTests {
     }
 
     @Test
-    void findNonExElement(){
+    void findNonExElement() {
         // Arrange
         var root = new Node(3);
         Node.addAlt(root, 2);
@@ -297,7 +302,7 @@ public class NodeTests {
     }
 
     @Test
-    void findElementWithOutRec(){
+    void findElementWithOutRec() {
         // Arrange
         var root = new Node(3);
         Node.addAlt(root, 2);
@@ -313,7 +318,7 @@ public class NodeTests {
     }
 
     @Test
-    void findNonExElementWithOutRec(){
+    void findNonExElementWithOutRec() {
         // Arrange
         var root = new Node(3);
         Node.addAlt(root, 2);
