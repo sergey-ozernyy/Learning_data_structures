@@ -35,6 +35,7 @@ public abstract class AddTests{
         
         //Assert
         assertNotNull(tree1.copyDeep());
+        assertNotEquals(tree1.getRoot(), tree2.getRoot());
         assertEquals(tree1.getRoot().getValue(), tree2.getRoot().getValue());
     }
 

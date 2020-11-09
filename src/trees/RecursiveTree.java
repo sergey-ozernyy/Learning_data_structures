@@ -23,10 +23,7 @@ public class RecursiveTree extends Tree{
     @Override
     public Tree copyDeep(){
         Tree tree2 = new RecursiveTree();
-        if(getRoot() != null){
-            tree2.setRoot(copyDeepNode(getRoot()));
-        }
-
+        tree2.setRoot(copyDeepNode(getRoot()));
         return tree2;
     }
 
