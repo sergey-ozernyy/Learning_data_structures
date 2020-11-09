@@ -153,7 +153,7 @@ class AddRecursiveTests extends AddTests{
     }
 }
 
-
+@Disabled
 @DisplayName("Нерекурсивное добавление элемента")
 class AddNotRecursiveTests extends AddTests{
     @Override
