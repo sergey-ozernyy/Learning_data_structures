@@ -1,43 +1,35 @@
 package trees;
 
-public class RecursiveTree extends Tree{
+public class RecursiveTree extends Tree {
 
     @Override
     public void add(int value) {
         setRoot(addInternal(getRoot(), value));
     }
 
-    Node addInternal(Node root, int value){
-        if(root == null) {
+    Node addInternal(Node root, int value) {
+        if (root == null) {
             return new Node(value);
         }
-        if(value < root.getValue()){
+        if (value < root.getValue()) {
             root.setLeft(addInternal(root.getLeft(), value));
-        }
-        else if( value > root.getValue()){
+        } else if (value > root.getValue()) {
             root.setRight(addInternal(root.getRight(), value));
         }
         return root;
     }
 
     @Override
-    public Tree copyDeep(){
-        Tree tree2 = new RecursiveTree();
-        if(getRoot() != null){
-            tree2.setRoot(copyDeepNode(getRoot()));
-        }
-
-        return tree2;
+    public Tree copyDeep() {
+        Tree cloned = new RecursiveTree();
+        cloned.setRoot(copyDeepNode(getRoot()));
+        return cloned;
     }
 
-    protected Node copyDeepNode(Node root){
-        var root2 = new Node(root.getValue());
-        if(root.getLeft() != null){
-            root2.setLeft(copyDeepNode(root.getLeft()));
-        }
-        if(root.getRight() != null){
-            root2.setRight(copyDeepNode(root.getRight()));
-        }
-        return root2;
+    protected Node copyDeepNode(Node root) {
+        return root == null
+                ? null
+                : new Node(root.getValue(), copyDeepNode(root.getLeft()), copyDeepNode(root.getRight()));
     }
+
 }
