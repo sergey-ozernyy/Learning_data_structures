@@ -26,17 +26,17 @@ public abstract class AddTests{
     @Test
     void copyDeepRoot(){
         //Arrange
-        Tree tree1 = createTree();
-        tree1.add(3);
+        Tree original = createTree();
+        original.add(3);
 
         
         //Act
-        var tree2 = tree1.copyDeep();
+        var cloned = original.copyDeep();
         
         //Assert
-        assertNotNull(tree1.copyDeep());
-        assertNotEquals(tree1.getRoot(), tree2.getRoot());
-        assertEquals(tree1.getRoot().getValue(), tree2.getRoot().getValue());
+        assertNotNull(cloned);
+        assertNotEquals(original.getRoot(), cloned.getRoot());
+        assertEquals(original.getRoot().getValue(), cloned.getRoot().getValue());
     }
 
     @Test
