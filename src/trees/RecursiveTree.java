@@ -21,9 +21,9 @@ public class RecursiveTree extends Tree {
 
     @Override
     public Tree copyDeep() {
-        Tree tree2 = new RecursiveTree();
-        tree2.setRoot(copyDeepNode(getRoot()));
-        return tree2;
+        Tree cloned = new RecursiveTree();
+        cloned.setRoot(copyDeepNode(getRoot()));
+        return cloned;
     }
 
     protected Node copyDeepNode(Node root) {
