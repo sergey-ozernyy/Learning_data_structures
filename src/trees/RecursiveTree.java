@@ -26,6 +26,23 @@ public class RecursiveTree extends Tree {
         return cloned;
     }
 
+    @Override
+    public Boolean equals(Tree target) {
+        if (target == null) {
+            return false;
+        }
+        return equalsInternal(target.getRoot(), this.getRoot());
+    }
+
+    private Boolean equalsInternal(Node root1, Node root2) {
+        return (root1 == null && root2 == null)
+                ||
+                (root1 != null && root2 != null
+                        && root1.getValue() == root2.getValue()
+                        && equalsInternal(root1.getLeft(), root2.getLeft())
+                        && equalsInternal(root1.getRight(), root2.getRight()));
+    }
+
     protected Node copyDeepNode(Node root) {
         return root == null
                 ? null

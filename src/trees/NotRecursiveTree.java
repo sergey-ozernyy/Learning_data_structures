@@ -20,6 +20,11 @@ public class NotRecursiveTree extends Tree {
         return tree2;
     }
 
+    @Override
+    public Boolean equals(Tree target) {
+        throw new UnsupportedOperationException();
+    }
+
     void addInternal(Node root, int value) {
         while (true) {
             if (value < root.getValue()) {
