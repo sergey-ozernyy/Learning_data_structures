@@ -57,7 +57,10 @@ public class EqualsTests {
     static Arguments[] negativeData() {
         return new Arguments[]{
                 arguments(new int[]{1, 2}, new int[]{3, 4}),
-                arguments(new int[]{5, 6}, new int[]{7, 8})
+                arguments(new int[]{1, 2}, new int[]{1, 4}),
+                arguments(new int[]{}, new int[]{3, 4}),
+                arguments(new int[]{3, 2, 1}, new int[]{1, 2, 3}),
+                arguments(new int[]{5, 6}, new int[]{6})
         };
     }
 
