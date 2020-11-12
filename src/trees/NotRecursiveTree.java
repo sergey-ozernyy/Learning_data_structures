@@ -46,5 +46,10 @@ public class NotRecursiveTree extends Tree {
             }
         }
     }
+
+    @Override
+    public Tree delete(int value) {
+        throw new UnsupportedOperationException();
+    }
 }
 

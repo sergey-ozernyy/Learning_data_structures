@@ -26,6 +26,12 @@ public class RecursiveTree extends Tree {
         return cloned;
     }
 
+    protected Node copyDeepNode(Node root) {
+        return root == null
+                ? null
+                : new Node(root.getValue(), copyDeepNode(root.getLeft()), copyDeepNode(root.getRight()));
+    }
+
     @Override
     public Boolean equals(Tree target) {
         if (target == null) {
@@ -43,10 +49,12 @@ public class RecursiveTree extends Tree {
                         && equalsInternal(root1.getRight(), root2.getRight()));
     }
 
-    protected Node copyDeepNode(Node root) {
-        return root == null
-                ? null
-                : new Node(root.getValue(), copyDeepNode(root.getLeft()), copyDeepNode(root.getRight()));
+    @Override
+    public Tree delete(int value) {
+        if(getRoot() == null){
+            return null;
+        }
+
     }
 
 }

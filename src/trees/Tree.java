@@ -22,6 +22,8 @@ public abstract class Tree {
     public abstract Tree copyDeep();
 
     public abstract Boolean equals(Tree target);
+
+    public abstract Tree delete(int value);
 }
 
 
