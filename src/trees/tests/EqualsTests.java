@@ -1,9 +1,13 @@
 package trees.tests;
 
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.converter.ConvertWith;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
+import trees.NotRecursiveTree;
 import trees.RecursiveTree;
 import trees.Tree;
 
@@ -13,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 
-public class EqualsTests {
+public abstract class EqualsTests {
     @Test
     void equalsNull() {
         // Arrange.
@@ -84,7 +88,25 @@ public class EqualsTests {
         assertFalse(result);
     }
 
-    private Tree createTree() {
+    abstract Tree createTree();
+}
+
+@DisplayName("Рекурсивное сравнение деревьев")
+class EqualsRecursiveTests extends EqualsTests{
+
+    @Override
+    Tree createTree() {
         return new RecursiveTree();
+    }
+
+}
+
+@Disabled
+@DisplayName("Нерекурсивное сравнение деревьев")
+class EqualsNotRecursiveTests extends EqualsTests{
+
+    @Override
+    Tree createTree() {
+        return new NotRecursiveTree();
     }
 }
