@@ -50,11 +50,8 @@ public class RecursiveTree extends Tree {
     }
 
     @Override
-    public Tree delete(int value) {
-        if(getRoot() == null){
-            return null;
-        }
-
+    public void delete(int value) {
+            ;
     }
 
 }
